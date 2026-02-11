@@ -4,16 +4,22 @@ console.log(imageEl);
 const buttonEl = document.querySelector("button")
 console.log(buttonEl);
 
-function buttonClick() {
-    console.log("You click the button:");
-    
+let isOn = false;
+console.log(isOn);
+
+
+function check_lamp_status(){
+    if (isOn === false){
+        imageEl.src = "yellow_lamp.png"
+        buttonEl.innerHTML = "spegni"
+        isOn = true;
+    } else {
+        imageEl.src = "white_lamp.png"
+        buttonEl.innerHTML = "accendi"
+        isOn = false;
+    }
 }
 
-buttonEl.onclick = function() {
-    imageEl.src = "yellow_lamp.png"
-    buttonEl.innerHTML = "spegni"
+buttonEl.onclick = function(){
+    check_lamp_status()
 }
-
-
-
-
